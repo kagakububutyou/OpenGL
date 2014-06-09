@@ -24,7 +24,10 @@ void display(void)
 	
 	//	lŠp‚ğ•\¦
 	BOX Box(100,100, -100, -100);
-	Box.Draw(Color(0,1,0,1));
+	Box.Draw(Color(0,1,0,1),true);
+
+	CIRCLE Circke(0, 0, 50);
+	Circke.Draw(Color(0, 0, 1, 1),false);
 
 	/*
 		«Às‚µ‚Ä‚¢‚È‚¢–½—ß‚ğ
