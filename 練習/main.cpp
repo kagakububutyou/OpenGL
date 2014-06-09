@@ -21,7 +21,7 @@ void display(void)
 		glBegin()Ç©ÇÁglEnd()Ç‹Ç≈ÇÃ
 		glVertex2d()Çí∏ì_Ç…ê›íËÇ∑ÇÈ
 	*/
-	glBegin(GL_LINE_LOOP);
+	glBegin(GL_POLYGON);
 	glVertex2d(-0.9, -0.9);
 	glVertex2d( 0.9, -0.9);
 	glVertex2d( 0.9,  0.9);
