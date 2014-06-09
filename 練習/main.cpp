@@ -22,7 +22,10 @@ void display(void)
 	LINE line( 0, WINDOW::Height, 0, -WINDOW::Height);
 	line.Draw(Color(1,0,0,1));
 	
-	
+	//	四角を表示
+	BOX Box(100,100, -100, -100);
+	Box.Draw(Color(0,1,0,1));
+
 	/*
 		↓実行していない命令を
 		全部実行する命令
