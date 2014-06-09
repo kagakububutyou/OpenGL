@@ -4,6 +4,7 @@
 
 //	自分で作ったヘッダーファイル
 #include "Figure.h"
+#include "Window.h"
 
 void display(void)
 {
@@ -15,10 +16,10 @@ void display(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 
 
-	//	↓直線のクラス化
-	LINE Line(-1, 0, 1, 0);
+	//	十字に線を引く
+	LINE Line(-WINDOW::Width, 0, WINDOW::Width, 0);
 	Line.Draw(Color(1,0,0,1));
-	LINE line( 0, 1, 0, -1);
+	LINE line( 0, WINDOW::Height, 0, -WINDOW::Height);
 	line.Draw(Color(1,0,0,1));
 	
 	
@@ -46,36 +47,15 @@ int main(int argc, char *argv[])
 {
 	//	↓初期化して
 	glutInit(&argc, argv);
-
-	//	ウインドウの生成する座標
-	glutInitWindowPosition(0, 0);
-	//	生成したウインドウの大きさ
-	glutInitWindowSize(640, 480);
-
-	//	↓ウインドウの表示モードの設定
-	//	INDEXモードっていうのもあるらしい
-	glutInitDisplayMode(GLUT_RGBA);
-
-	//	↓ウインドウを開く
-	glutCreateWindow(argv[0]);
-
-	//	ウインドウ全体をビューポートにする
-	glViewport(0, 0, 640, 480);
-
-	//	変換行列の初期化
-	glLoadIdentity();
-
-	//	スクリーン上の表示領域をビューポートの大きさに比例させる
-	glOrtho(-640,640, -480, 480, -1.0, 1.0);
-
-
+	
+	//	ウインドウの生成
+	WINDOW Window(0, 0, WINDOW::Width, WINDOW::Height);
+	Window.Init();
 
 	init();
 
 	//	↓そのウインドウ内に絵を描く関数を決めて
 	glutDisplayFunc(display);
-
-	//display();
 
 	//	↓何かことが起こるのを待つ
 	glutMainLoop();
