@@ -1,4 +1,4 @@
-﻿2014/06/09 13:37:54 にビルドを開始しました。
+﻿2014/06/09 15:11:11 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\教材\OpenGL\練習\OpenGL練習.vcxproj" (Build ターゲット)。
      1>ClCompile:
          C:\Visual Studio Express\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -10,4 +10,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:01.12
+経過時間 00:00:01.32

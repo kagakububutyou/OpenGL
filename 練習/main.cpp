@@ -2,6 +2,9 @@
 #include <GL/glut.h>
 //	↑OpenGL使うときに使う？
 
+//	自分で作ったヘッダーファイル
+#include "Graphic.h"
+
 void display(void)
 {
 	/*
@@ -11,25 +14,15 @@ void display(void)
 	*/
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	//	↓線の色が変わる
-	glColor3d(1.0, 0.0, 0.0);
 
+	//	↓直線のクラス化
+	LINE Line(-0.9, 0, 0.9, 0);
+	Line.Draw(Color(1,0,0,1));
+	
 	/*
-		glBegin(mode)modeで描画する
-		図形のタイプを指定する
-
-		glBegin()からglEnd()までの
-		glVertex2d()を頂点に設定する
-	*/
-	glBegin(GL_POLYGON);
-	glVertex2d(-0.9, -0.9);
-	glVertex2d( 0.9, -0.9);
-	glVertex2d( 0.9,  0.9);
-	glVertex2d(-0.9,  0.9);
-	glEnd();
-	/*
-		実行していない命令を
+		↓実行していない命令を
 		全部実行する命令
+		描画の終了時に書く
 	*/
 	glFlush();
 }
@@ -58,11 +51,13 @@ int main(int argc, char *argv[])
 	//	↓ウインドウを開く
 	glutCreateWindow(argv[0]);
 
+
+	init();
+
 	//	↓そのウインドウ内に絵を描く関数を決めて
 	glutDisplayFunc(display);
 
-
-	init();
+	//display();
 
 	//	↓何かことが起こるのを待つ
 	glutMainLoop();
