@@ -26,13 +26,9 @@ void display(void)
 	BOX Box(100,100, -100, -100);
 	Box.Draw(Color(0,1,0,1),true);
 
-	//	円を表示
-	//CIRCLE Circke(0, 0, 50);
-	//Circke.Draw(Color(0, 0, 1, 1),false);
-
-	//	楕円を表示
-	OVAL Oval(0, 0, 50, 40, 70);
-	Oval.Draw(Color(0, 0, 1, 1),false);
+	//	三角形の描画
+	TRIANGLE Triangle(100, 0, 0, 100, 0, -100);
+	Triangle.Draw(Color(0, 0, 1, 1),false);
 
 	/*
 		↓実行していない命令を

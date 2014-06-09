@@ -150,3 +150,36 @@ public:
 		 }
 	}
 };
+
+//	ŽOŠpŒ`‚Ì•`‰æ
+class TRIANGLE
+{
+private:
+
+	float x1, y1, x2, y2, x3, y3;
+
+public:
+	TRIANGLE(float _x1,float _y1,float _x2,float _y2,float _x3,float _y3)
+	{
+		this->x1 = _x1;
+		this->y1 = _y1;
+		this->x2 = _x2;
+		this->y2 = _y2;
+		this->x3 = _x3;
+		this->y3 = _y3;
+	}
+	~TRIANGLE(){}
+
+
+	void Draw(Color &color, bool FillFlag)
+	{
+		glColor4f(color.r, color.g, color.b, color.a);
+		if(FillFlag)glBegin(GL_QUADS);
+		if(!FillFlag)glBegin(GL_LINE_LOOP);
+		glVertex2d( x1, y1);
+		glVertex2d( x2, y2);
+		glVertex2d( x3, y3);
+		glEnd();
+	}
+
+};
