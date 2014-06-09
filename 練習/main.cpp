@@ -12,6 +12,19 @@ void display(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	/*
+		glBegin(mode)modeで描画する
+		図形のタイプを指定する
+
+		glBegin()からglEnd()までの
+		glVertex2d()を頂点に設定する
+	*/
+	glBegin(GL_LINE_LOOP);
+	glVertex2d(-0.9, -0.9);
+	glVertex2d( 0.9, -0.9);
+	glVertex2d( 0.9,  0.9);
+	glVertex2d(-0.9,  0.9);
+	glEnd();
+	/*
 		実行していない命令を
 		全部実行する命令
 	*/
@@ -32,9 +45,6 @@ void init(void)
 
 int main(int argc, char *argv[])
 {
-
-	//	ウインドウだけを表示
-
 	//	↓初期化して
 	glutInit(&argc, argv);
 
