@@ -183,3 +183,28 @@ public:
 	}
 
 };
+
+//	“_‚Ì•`‰æ
+class PIXEL
+{
+private:
+
+	float x, y;
+
+public:
+	PIXEL(float _x, float _y)
+	{
+		this->x = _x;
+		this->y = _y;
+	}
+	~PIXEL(){}
+
+
+	void Draw(Color &color)
+	{
+		glColor4f(color.r, color.g, color.b, color.a);
+		glBegin(GL_POINTS);
+		glVertex2d( x, y);
+		glEnd();
+	}
+};

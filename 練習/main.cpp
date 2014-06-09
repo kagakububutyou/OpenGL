@@ -26,9 +26,9 @@ void display(void)
 	BOX Box(100,100, -100, -100);
 	Box.Draw(Color(0,1,0,1),true);
 
-	//	三角形の描画
-	TRIANGLE Triangle(100, 0, 0, 100, 0, -100);
-	Triangle.Draw(Color(0, 0, 1, 1),false);
+	//	点の描画
+	PIXEL Pixle(0, 0);
+	Pixle.Draw(Color(0, 0, 1, 1));
 
 	/*
 		↓実行していない命令を
