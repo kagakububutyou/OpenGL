@@ -36,3 +36,13 @@ private:
 
 };
 
+//	ŽlŠpŒ`‚ð•`‰æ
+class BOX
+{
+public:
+	BOX();
+	~BOX();
+
+private:
+
+};

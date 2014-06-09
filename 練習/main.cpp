@@ -3,7 +3,7 @@
 //	↑OpenGL使うときに使う？
 
 //	自分で作ったヘッダーファイル
-#include "Graphic.h"
+#include "Figure.h"
 
 void display(void)
 {
@@ -16,8 +16,11 @@ void display(void)
 
 
 	//	↓直線のクラス化
-	LINE Line(-0.9, 0, 0.9, 0);
+	LINE Line(-1, 0, 1, 0);
 	Line.Draw(Color(1,0,0,1));
+	LINE line( 0, 1, 0, -1);
+	line.Draw(Color(1,0,0,1));
+	
 	
 	/*
 		↓実行していない命令を
@@ -44,12 +47,27 @@ int main(int argc, char *argv[])
 	//	↓初期化して
 	glutInit(&argc, argv);
 
+	//	ウインドウの生成する座標
+	glutInitWindowPosition(0, 0);
+	//	生成したウインドウの大きさ
+	glutInitWindowSize(640, 480);
+
 	//	↓ウインドウの表示モードの設定
 	//	INDEXモードっていうのもあるらしい
 	glutInitDisplayMode(GLUT_RGBA);
 
 	//	↓ウインドウを開く
 	glutCreateWindow(argv[0]);
+
+	//	ウインドウ全体をビューポートにする
+	glViewport(0, 0, 640, 480);
+
+	//	変換行列の初期化
+	glLoadIdentity();
+
+	//	スクリーン上の表示領域をビューポートの大きさに比例させる
+	glOrtho(-640,640, -480, 480, -1.0, 1.0);
+
 
 
 	init();
