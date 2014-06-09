@@ -6,10 +6,13 @@ void display(void)
 {
 	/*
 		画面が初期化した時に
-		何も表示しない時に
+		何も無いところの
 		ウインドウを塗りつぶす
 	*/
 	glClear(GL_COLOR_BUFFER_BIT);
+
+	//	↓線の色が変わる
+	glColor3d(1.0, 0.0, 0.0);
 
 	/*
 		glBegin(mode)modeで描画する
@@ -40,7 +43,7 @@ void init(void)
 		背景色を変更しないのであれば
 		最初に一度だけ設定すれば大丈夫
 	*/	
-	glClearColor(0.0, 0.0, 0.0, 1.0);
+	glClearColor(1.0, 1.0, 1.0, 1.0);
 }
 
 int main(int argc, char *argv[])
