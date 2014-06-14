@@ -41,9 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\freeglut-2.8.1\include\GL;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\freeglut-2.8.1\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\freeglut-2.8.1\include\GL;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\freeglut-2.8.1\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -83,6 +87,7 @@
   <ItemGroup>
     <ClInclude Include="Color.h" />
     <ClInclude Include="Figure.h" />
+    <ClInclude Include="Font.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,8 +1,23 @@
-﻿2014/06/10 7:22:42 にビルドを開始しました。
+﻿2014/06/15 8:47:40 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\教材\OpenGL\練習\OpenGL練習.vcxproj" (Build ターゲット)。
      1>ClCompile:
          C:\Visual Studio Express\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
+     1>c:\教材\opengl\練習\figure.h(90): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\figure.h(92): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\figure.h(93): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\figure.h(94): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\figure.h(133): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\figure.h(135): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\figure.h(136): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\figure.h(137): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\window.h(21): warning C4244: '引数' : 'float' から 'int' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\window.h(24): warning C4244: '引数' : 'float' から 'int' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\window.h(34): warning C4244: '引数' : 'float' から 'GLsizei' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\font.h(36): warning C4244: '引数' : 'float' から 'int' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\main.cpp(26): warning C4244: '引数' : 'const int' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\main.cpp(28): warning C4244: '引数' : 'const int' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\教材\opengl\練習\main.cpp(73): warning C4244: '引数' : 'const int' から 'float' への変換です。データが失われる可能性があります。
        Link:
          C:\Visual Studio Express\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\教材\OpenGL\練習\Debug\OpenGL練習.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\教材\OpenGL\練習\Debug\OpenGL練習.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\教材\OpenGL\練習\Debug\OpenGL練習.lib" /MACHINE:X86 Debug\main.obj
          OpenGL練習.vcxproj -> C:\教材\OpenGL\練習\Debug\OpenGL練習.exe
@@ -10,4 +25,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:01.10
+経過時間 00:00:02.74

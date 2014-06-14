@@ -1,10 +1,16 @@
 #pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
-#include <GL/glut.h>
+#include <freeglut.h>
 //	↑OpenGL使うときに使う？
+#include <stdio.h>
+
 
 //	自分で作ったヘッダーファイル
-#include "Figure.h"
-#include "Window.h"
+#include "Figure.h"	//	図形描画
+#include "Window.h"	//	ウインドウの生成
+#include "Font.h"	//	文字描画
+
+FONT *font;
+
 
 void display(void)
 {
@@ -30,6 +36,12 @@ void display(void)
 	PIXEL Pixle(0, 0);
 	Pixle.Draw(Color(0, 0, 1, 1));
 
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
+	font->Draw(10,120,L"こんにちわ OpenGLの世界!!");
+	glutSwapBuffers();
+
 	/*
 		↓実行していない命令を
 		全部実行する命令
@@ -48,6 +60,8 @@ void init(void)
 		最初に一度だけ設定すれば大丈夫
 	*/	
 	glClearColor(1.0, 1.0, 1.0, 1.0);
+
+	font = new FONT(L"ＭＳ明朝", 24);
 }
 
 int main(int argc, char *argv[])

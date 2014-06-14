@@ -1,7 +1,5 @@
 #pragma once
 
-#include <GL/glut.h>
-//	↑OpenGL使うときに使う？
 
 //	ウインドウの生成に関するクラス
 class WINDOW
