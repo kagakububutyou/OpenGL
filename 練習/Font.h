@@ -1,7 +1,6 @@
 #pragma once
 
-#include <freeglut.h>
-#include <stdio.h>
+
 
 
 //	•¶š‚ğ•`‰æ‚·‚éƒNƒ‰ƒX
@@ -15,7 +14,7 @@ private:
 	float size;
 
 public:
-	FONT(wchar_t *_fontname, float _size)
+	FONT(float _size, wchar_t *_fontname = L"‚l‚r ‚oƒSƒVƒbƒN")
 	{
 		Hfont = CreateFont
 		(
@@ -37,9 +36,9 @@ public:
 		Hdc = wglGetCurrentDC();
 		SelectObject(Hdc, Hfont);
 	}
-	~FONT(){};
+	~FONT(){}
 
-	void Draw(float _x, float _y, wchar_t *_format)
+	void Draw(float _x, float _y, wchar_t *_format, Color &color)
 	{
 		wchar_t buf[256];
 		va_list ap;
@@ -52,6 +51,9 @@ public:
 		va_start(ap, _format);
 		vswprintf_s(buf, _format, ap);
 		va_end(ap);
+
+		//	F
+		glColor4f(color.r, color.g, color.b, color.a);
 
 		Length = wcslen(buf);
 		list = glGenLists(Length);

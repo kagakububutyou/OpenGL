@@ -1,9 +1,6 @@
 #pragma once
 #include <math.h>
 
-
-#include "Color.h"
-
 static const float ƒÎ = 3.1415926f;
 
 //	’¼ü‚ğˆø‚­ƒNƒ‰ƒX

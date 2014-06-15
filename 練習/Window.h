@@ -4,6 +4,10 @@
 //	ウインドウの生成に関するクラス
 class WINDOW
 {
+private:
+	
+	float x, y, width, height;
+
 public:
 
 	WINDOW(float x, float y, float width, float height)
@@ -26,6 +30,7 @@ public:
 		//	↓ウインドウの表示モードの設定
 		//	INDEXモードっていうのもあるらしい
 		glutInitDisplayMode(GLUT_RGBA);
+		//glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
 
 		//	↓ウインドウを開く
 		glutCreateWindow("OpenGL練習");
@@ -44,11 +49,5 @@ public:
 	
 	static const int Width = 640;	//	画面の幅
 	static const int Height = 480;	//	画面の高さ
-
-	
-private:
-	
-	float x, y, width, height;
-
 
 };

@@ -5,12 +5,10 @@
 
 
 //	自分で作ったヘッダーファイル
+#include "Color.h"	//	色
 #include "Figure.h"	//	図形描画
 #include "Window.h"	//	ウインドウの生成
 #include "Font.h"	//	文字描画
-
-FONT *font;
-
 
 void display(void)
 {
@@ -19,7 +17,8 @@ void display(void)
 		何も無いところの
 		ウインドウを塗りつぶす
 	*/
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//glClear(GL_COLOR_BUFFER_BIT);
 
 
 	//	十字に線を引く
@@ -30,17 +29,15 @@ void display(void)
 	
 	//	四角を表示
 	BOX Box(100,100, -100, -100);
-	Box.Draw(Color(0,1,0,1),true);
+	Box.Draw(Color(0,1,0,1),false);
 
 	//	点の描画
 	PIXEL Pixle(0, 0);
 	Pixle.Draw(Color(0, 0, 1, 1));
 
-
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
-	font->Draw(10,120,L"こんにちわ OpenGLの世界!!");
-	glutSwapBuffers();
+	//	文字列描画
+	FONT Font(24);
+	Font.Draw(10,10,L"こんにちわ OpenGLの世界",Color(0, 0, 1, 1));
 
 	/*
 		↓実行していない命令を
@@ -60,8 +57,6 @@ void init(void)
 		最初に一度だけ設定すれば大丈夫
 	*/	
 	glClearColor(1.0, 1.0, 1.0, 1.0);
-
-	font = new FONT(L"ＭＳ明朝", 24);
 }
 
 int main(int argc, char *argv[])
