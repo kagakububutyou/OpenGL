@@ -6,11 +6,11 @@ class WINDOW
 {
 private:
 	
-	float x, y, width, height;
+	int x, y, width, height;
 
 public:
 
-	WINDOW(float x, float y, float width, float height)
+	WINDOW(int x, int y, int width, int height)
 	{
 		this->x = x;
 		this->y = y;

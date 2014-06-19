@@ -2,7 +2,7 @@
 #include <freeglut.h>
 //	↑OpenGL使うときに使う？
 #include <stdio.h>
-
+#include <iostream>
 
 //	自分で作ったヘッダーファイル
 #include "Color.h"	//	色
@@ -31,13 +31,16 @@ void display(void)
 	BOX Box(100,100, -100, -100);
 	Box.Draw(Color(0,1,0,1),false);
 
+	CIRCLE Circle(0, 0, 100);
+	Circle.Draw(Color(0,0,1,1),false);
+
 	//	点の描画
 	PIXEL Pixle(0, 0);
 	Pixle.Draw(Color(0, 0, 1, 1));
 
 	//	文字列描画
 	FONT Font(24);
-	Font.Draw(10,10,L"こんにちわ OpenGLの世界",Color(0, 0, 1, 1));
+	Font.Draw(0,-13,L"←ここが中心",Color(0, 0, 1, 1));
 
 	/*
 		↓実行していない命令を

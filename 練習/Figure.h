@@ -129,21 +129,22 @@ public:
 	{
 		 for (float th1 = 0.0;  th1 <= 360.0;  th1 = th1 + 1.0)
 		 {             
-		  float th2 = th1 + 10.0;
-		  float th1_rad = th1 / 180.0 * ƒÎ; 
-		  float th2_rad = th2 / 180.0 * ƒÎ;
+			float th2 = th1 + 10.0;
+			float th1_rad = th1 / 180.0 * ƒÎ; 
+			float th2_rad = th2 / 180.0 * ƒÎ;
 
-		  float x1 = r * cos(th1_rad)*(rx/100.0f);
-		  float y1 = r * sin(th1_rad)*(ry/100.0f);
-		  float x2 = r * cos(th2_rad)*(rx/100.0f);
-		  float y2 = r * sin(th2_rad)*(ry/100.0f);
+			float x1 = r * cos(th1_rad)*(rx/100.0f);
+			float y1 = r * sin(th1_rad)*(ry/100.0f);
+			float x2 = r * cos(th2_rad)*(rx/100.0f);
+			float y2 = r * sin(th2_rad)*(ry/100.0f);
 
 
-		  glColor4f(color.r, color.g, color.b, color.a);
-		  glBegin(GL_LINES);   
-		  glVertex2f( x1+x, y1+y );
-		  glVertex2f( x2+x, y2+y );
-		  glEnd();
+			glColor4f(color.r, color.g, color.b, color.a);
+			if(FillFlag)glBegin(GL_QUADS);
+			if(!FillFlag)glBegin(GL_LINE_LOOP);
+			glVertex2f( x1+x, y1+y );
+			glVertex2f( x2+x, y2+y );
+			glEnd();
 		 }
 	}
 };

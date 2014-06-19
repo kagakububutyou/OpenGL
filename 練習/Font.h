@@ -61,16 +61,11 @@ public:
 		{
 			wglUseFontBitmapsW(Hdc, buf[i], 1, list + (DWORD)i);
 		}
-
-		glDisable(GL_LIGHTING);
 		glRasterPos2f(_x, _y);
-		//	ディスプレイリストで描画
 		for(int i = 0; i < Length; i++)
 		{
 			glCallList(list + i);
 		}
-		glEnable(GL_LIGHTING);
-		//	ディスプレイリストの破棄
 		glDeleteLists(list, Length);
 		list = 0;
 		Length = 0;
