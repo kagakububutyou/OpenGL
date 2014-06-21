@@ -1,4 +1,8 @@
 #pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
+#pragma comment(lib,"winmm.lib")
+
+#include <windows.h>
+#include <mmsystem.h>
 #include <freeglut.h>
 //	↑OpenGL使うときに使う？
 #include <stdio.h>
@@ -10,6 +14,31 @@
 #include "Window.h"	//	ウインドウの生成
 #include "Font.h"	//	文字描画
 
+int x = 100;
+int y = 100;
+
+void idle(void)
+{
+	JOYINFOEX JOYPAD;
+
+	JOYPAD.dwSize = sizeof(JOYINFOEX);
+	JOYPAD.dwFlags = JOY_RETURNALL; // 全ての情報を取得
+
+	if(joyGetPosEx(JOYSTICKID1, &JOYPAD) == JOYERR_NOERROR)
+	{	
+		// 成功
+		if(JOYPAD.dwXpos > 0x7FFF + 0x4000) x+=2;
+		if(JOYPAD.dwXpos < 0x7FFF - 0x4000) x-=2;
+		if(JOYPAD.dwYpos > 0x7FFF + 0x4000) y+=2;
+		if(JOYPAD.dwYpos < 0x7FFF - 0x4000) y-=2;
+
+		//ボタン32個まで 空制御 コピペ用
+		//if(JOYPAD.dwButtons & JOY_BUTTON1);
+		//if(JOYPAD.dwButtons & JOY_BUTTON2);
+	}
+	Sleep(1);
+	glutPostRedisplay();
+}
 void display(void)
 {
 	/*
@@ -28,8 +57,8 @@ void display(void)
 	line.Draw(Color(1,0,0,1));
 	
 	//	四角を表示
-	BOX Box(100,100, -100, -100);
-	Box.Draw(Color(0,1,0,1),false);
+	BOX Box(x,y, x-200, y-200);
+	Box.Draw(Color(0,1,0,1),true);
 
 	CIRCLE Circle(0, 0, 100);
 	Circle.Draw(Color(0,0,1,1),false);
@@ -49,7 +78,6 @@ void display(void)
 	*/
 	glFlush();
 }
-
 void init(void)
 {
 	/*
@@ -75,6 +103,9 @@ int main(int argc, char *argv[])
 
 	//	↓そのウインドウ内に絵を描く関数を決めて
 	glutDisplayFunc(display);
+
+	//	↓コントローラー
+	glutIdleFunc(idle);
 
 	//	↓何かことが起こるのを待つ
 	glutMainLoop();
